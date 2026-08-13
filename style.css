@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --bgcolor:#F4F0E4;
+    --txtcolor:#537D96;
+    --secbg: #537D96;
+    --text2: #000000;
+}
+.gamewrapper{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+body{
+    background-color: var(--bgcolor);
+}
+.gamebox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+}
+.gamebox button{
+    width: 80px;
+    height: 80px;
+    border: 0;
+    border-radius: 8px;
+    background-color: var(--secbg);
+    font-size: 22px;
+    color: var(--bgcolor);
+}
+.wd-checkout-prod-cont .wd-checkout-prod-title .quantity{
+    display: none !important;
+}
+.hide{
+    display: none;
+}
+.winner-wrapper p{
+font-size: 32px;
+color: var(--secbg);
+font-weight: 600;
+}
+#gamereset, #gamenew{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: var(--text2);
+    color: var(--bgcolor);
+    outline: 0;
+     border-color: var(--text2);
+}
+#gamereset:hover , #gamenew:hover{
+    transition: 0.3s ease;
+    background-color: var(--secbg);
+    color: var(--text2);
+    border-color: var(--secbg);
+}
