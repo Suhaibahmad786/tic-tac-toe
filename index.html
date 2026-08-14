@@ -4,30 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="bg-gradient">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
     <section id="ticgame">
       <div class="gamewrapper">
-        <div class="winner-wrapper hide">
-          <p id="winnmae">Winner
-          </p>
-        </div>
-        <h2>Tic Tac Toe</h2>
-        <div class="gamebox">
-          <button class="boxgame"></button>
-          <button class="boxgame"></button>
-          <button class="boxgame"></button>
-          <button class="boxgame"></button>
-          <button class="boxgame"></button>
-          <button class="boxgame"></button>
-          <button class="boxgame"></button>
-          <button class="boxgame"></button>
-          <button class="boxgame"></button>
-        </div>
-        <div class="buton-wrapper">
-        <Button id="gamereset">Reset Game</Button>
-        <Button id="gamenew">New Game</Button>
+        <div class="game-card">
+
+          <header class="game-header">
+            <h1 class="game-title">
+              <span class="title-x">X</span><span class="title-o">O</span>
+              Tic Tac Toe
+            </h1>
+            <p class="game-subtitle">Classic, reimagined</p>
+          </header>
+
+          <div class="scoreboard">
+            <div class="score-card score-x">
+              <span class="score-label">Player X</span>
+              <span class="score-value" id="scoreX">0</span>
+            </div>
+            <div class="score-card score-draw">
+              <span class="score-label">Draws</span>
+              <span class="score-value" id="scoreDraw">0</span>
+            </div>
+            <div class="score-card score-o">
+              <span class="score-label">Player O</span>
+              <span class="score-value" id="scoreO">0</span>
+            </div>
+          </div>
+
+          <div class="turn-indicator" id="turnIndicator">
+            <div class="turn-badge turn-x active" id="turnBadgeX">
+              <span class="turn-mark">X</span>
+              <span class="turn-text">Player X's Turn</span>
+            </div>
+            <div class="turn-badge turn-o" id="turnBadgeO">
+              <span class="turn-mark">O</span>
+              <span class="turn-text">Player O's Turn</span>
+            </div>
+          </div>
+
+          <div class="winner-wrapper hide" id="winnerOverlay">
+            <div class="winner-card">
+              <div class="confetti" aria-hidden="true"></div>
+              <div class="trophy-icon">&#127942;</div>
+              <p id="winnmae" class="winner-text">Winner</p>
+              <p class="winner-sub">Well played!</p>
+            </div>
+          </div>
+
+          <div class="gamebox" id="gameBoard">
+            <button class="boxgame" data-index="0"></button>
+            <button class="boxgame" data-index="1"></button>
+            <button class="boxgame" data-index="2"></button>
+            <button class="boxgame" data-index="3"></button>
+            <button class="boxgame" data-index="4"></button>
+            <button class="boxgame" data-index="5"></button>
+            <button class="boxgame" data-index="6"></button>
+            <button class="boxgame" data-index="7"></button>
+            <button class="boxgame" data-index="8"></button>
+            <div class="win-line" id="winLine"></div>
+          </div>
+
+          <div class="buton-wrapper">
+            <button id="gamereset" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              Reset Board
+            </button>
+            <button id="gamenew" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              New Game
+            </button>
+          </div>
+
         </div>
       </div>
     </section>
